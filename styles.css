@@ -51,13 +51,22 @@ h1 {
     font-style: italic;
     color: var(--color-muted);
 }
-.footer {
+footer {
     text-align: center;
     color: var(--color-muted);
+    padding : var(--space-l) var(--space-m);
+    border-top : 1px solid var(--color-border);
 }
 .navbar {
     padding : var(--space-m);
     border-bottom : 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.brand{
+    display: flex;
+    align-items: center;
 }
 .brand-logo {
     margin-right : var(--space-s);
@@ -75,6 +84,7 @@ h1 {
   color: var(--color-on-primary);
   font-family: var(--font-main);
   font-size: 1rem;
+  display: inline-block;
 }
 .section {
     padding : var(--space-l) var(--space-m);
@@ -86,5 +96,42 @@ h1 {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background-color: var(--color-surface);
+  display: inline-block;
+}
+.demo-figure{
+    margin : 0;
 }
 
+.planner-table{
+    width: 100%;
+}
+th, td {
+    padding: var(--space-s);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+th {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+td {
+    background-color: var(--color-surface);
+}
+.form-label{
+    display: block;
+    margin-bottom: var(--space-s);
+    font-weight: bold;
+}
+.form-field{
+    display: block;
+    padding: var(--space-s);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 1rem;
+}
+.feature-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
