@@ -135,3 +135,39 @@ td {
     flex-wrap: wrap;
     justify-content: center;
 }
+/* ---------- Chat page ---------- */
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-m);
+}
+
+.chat-row {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: var(--space-m);
+}
+.chat-row--user {
+  justify-content: flex-end;
+}
+
+.chat-row--ai {
+  justify-content: flex-start;
+}
+.chat-bubble {
+  padding: var(--space-s) var(--space-m);
+  border-radius: var(--radius);
+}
+
+.chat-bubble--user {
+  margin-left: var(--space-l);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.chat-bubble--ai {
+  margin-right: var(--space-l);
+  background-color: var(--color-surface);
+}
+
+
