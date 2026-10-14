@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Planner | AI Student Assistant</title>
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  </head>
+  <body>
+    <header class="navbar" id="top">
+      <a class="brand" href="index.html" title="Go to the home page">
+        <img class="brand-logo" src="starter-assets\images\logo.svg" alt="AI Student Assistant logo" width="40" height="40">
+        AI Student Assistant
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="assistant.html">Assistant</a>
+        <a class="nav-link" href="planner.html">Planner</a>
+      </nav>
+    </header>
+     <main>
+      <section class="section">
+        <h1 class="page-title">My weekly study plan</h1>
+        <table class="planner-table">
+          <tr>
+            <th>Day</th>
+            <th>Subject</th>
+            <th>Time</th>
+            <th>Goal</th>
+          </tr>
+          <tr>
+            <td>Monday</td>
+            <td>Math</td>
+            <td>10:00 AM - 12:00 PM</td>
+            <td>Complete exercises on algebra</td>
+        </table>
+      </section>
+            <!-- Form to add a study session (it will work with JavaScript later) -->
+      <section class="section">
+        <h2 class="section-title">Add a study session</h2>
+        <form class="planner-form">
+          <label class="form-label" for="session-subject">Subject</label>
+          <input class="form-field" type="text" id="session-subject" name="subject" placeholder="Example: Math" maxlength="30">
+          <label class="form-label" for="session-date">Date</label>
+          <input class="form-field" type="date" id="session-date" name="date">
+          <label class="form-label" for="session-hours">Hours</label>
+          <input class="form-field" type="number" id="session-hours" name="hours" value="1">
+          <input class="button" type="submit" value="Add session">
+                      <label class="form-label" for="question">Your question</label>
+          <textarea class="form-field" id="question" name="question" rows="4" cols="30" placeholder="Type your question here..."></textarea>
+          <div class="form-actions">
+            <button class="button" type="submit">Send</button>
+            <button class="button button--secondary" type="reset">Clear</button>
+            <button class="button button--secondary" type="button">New chat</button>
+          </div>
+
+        </form>
+      </section>
+
+    </main>
+    <footer class="footer">
+      <p>Made by the AI Development Bootcamp students.<br>Built with HTML and CSS.</p>
+      <p><a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Learn more about AI</a> | <a href="#top">Back to top</a></p>
+      <p><small>For learning purposes only.</small></p>
+    </footer>
+  </body>
+</html>

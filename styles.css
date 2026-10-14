@@ -1,0 +1,83 @@
+html {
+  --color-primary: #2563eb;
+  --color-on-primary: #ffffff;
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --color-background: #ffffff;
+  --color-surface: #f3f4f6;
+  --color-border: #d1d5db;
+  --font-main: Arial, Helvetica, sans-serif;
+  --space-s : 8px;
+  --space-m : 16px;
+  --space-l : 32px;
+  --radius : 8px;
+  font-size: 16px;
+}
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.5;
+}
+h1 {
+            color: var(--color-primary);
+            font-family : sans-serif;
+        }
+.brand, .nav-link, .button{
+    font-weight: bold;
+    text-decoration: none;
+}
+.hero {
+    text-align: center;
+    padding : var(--space-l) var(--space-m);
+    background-color: var(--color-surface);
+}
+.hero-title{
+    font-size: 2.5rem;
+}
+.hero-text{
+    font-size: 1.25rem;
+    color: var(--color-muted);
+}
+#price {
+    font-size: 0.9rem;
+}
+.section-title {
+    font-size : 1.75rem;
+    letter-spacing: 1px;
+}
+.demo-caption {
+    font-style: italic;
+    color: var(--color-muted);
+}
+.footer {
+    text-align: center;
+    color: var(--color-muted);
+}
+.navbar {
+    padding : var(--space-m);
+    border-bottom : 1px solid var(--color-border);
+}
+.brand-logo {
+    margin-right : var(--space-s);
+}
+.nav-link {
+    padding : var(--space-s) var(--space-m);
+}
+/* ---------- Buttons ---------- */
+.button {
+  margin: var(--space-s);
+  padding: var(--space-s) var(--space-m);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+.section {
+    padding : var(--space-l) var(--space-m);
+}
+
+
