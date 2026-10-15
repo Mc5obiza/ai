@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistant | AI Student Assistant</title>
-    <link rel="icon" href="starter-assets\images\logo.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-        <!-- Header: logo and navigation links -->
+    <!-- Header: logo and navigation links -->
     <header class="navbar" id="top">
       <a class="brand" href="index.html" title="Go to the home page">
         <img class="brand-logo" src="images/logo.svg" alt="AI Student Assistant logo" width="40" height="40">
@@ -20,7 +21,8 @@
         <a class="nav-link" href="planner.html">Planner</a>
       </nav>
     </header>
-        <!-- Main content: the chat and a sidebar with tips -->
+
+    <!-- Main content: the chat and a sidebar with tips -->
     <main class="chat-page">
       <section class="chat">
         <h1 class="page-title">Ask the assistant</h1>
@@ -28,14 +30,56 @@
         <div class="chat-history">
           <div class="chat-row chat-row--user">
             <div class="chat-bubble chat-bubble--user">What is machine learning?</div>
+            <i class="fa fa-user chat-avatar"></i>
           </div>
           <div class="chat-row chat-row--ai">
+            <i class="fa fa-graduation-cap chat-avatar"></i>
             <div class="chat-bubble chat-bubble--ai">It is a way to teach computers with examples instead of writing every rule by hand.</div>
           </div>
-          <button class="button"><i class="fa fa-paper-plane"></i> Ask</button>
+          <div class="chat-row chat-row--user">
+            <div class="chat-bubble chat-bubble--user">Can you give me an example?</div>
+            <i class="fa fa-user chat-avatar"></i>
+          </div>
+          <div class="chat-row chat-row--ai">
+            <i class="fa fa-graduation-cap chat-avatar"></i>
+            <div class="chat-bubble chat-bubble--ai">Sure! A spam filter learns from thousands of emails which ones are spam.</div>
+          </div>
         </div>
+        <!-- Question form -->
+        <form class="chat-form">
+          <label class="form-label" for="subject">Subject</label>
+          <select class="form-field" id="subject" name="subject">
+            <option value="math">Math</option>
+            <option value="physics">Physics</option>
+            <option value="coding">Coding</option>
+            <option value="english">English</option>
+          </select>
+          <label class="form-label" for="question">Your question</label>
+          <textarea class="form-field" id="question" name="question" rows="4" cols="30" placeholder="Type your question here..."></textarea>
+          <div class="form-actions">
+            <button class="button" type="submit"><i class="fa fa-paper-plane"></i> Send</button>
+            <button class="button button--secondary" type="reset">Clear</button>
+            <button class="button button--secondary" type="button">New chat</button>
+          </div>
+        </form>
       </section>
+
+      <!-- Sidebar: tips for good questions -->
+      <aside class="chat-tips">
+        <h2 class="tips-title">Tips for good questions</h2>
+        <ul class="tips-list">
+          <li>Name the topic and your level.</li>
+          <li>Ask for an example.</li>
+          <li>Ask it to explain "like I am 12 years old".</li>
+        </ul>
+      </aside>
     </main>
 
+    <!-- Footer: information about the site -->
+    <footer class="footer">
+      <p>Made by the AI Development Bootcamp students.<br>Built with HTML and CSS.</p>
+      <p><a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Learn more about AI</a> | <a href="#top">Back to top</a></p>
+      <p><small>For learning purposes only.</small></p>
+    </footer>
   </body>
 </html>

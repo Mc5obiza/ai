@@ -1,5 +1,7 @@
+/* ---------- Theme: change these values to restyle the whole site ---------- */
 html {
   --color-primary: #2563eb;
+  --color-primary-dark: #1e40af;
   --color-on-primary: #ffffff;
   --color-text: #1f2937;
   --color-muted: #6b7280;
@@ -7,75 +9,109 @@ html {
   --color-surface: #f3f4f6;
   --color-border: #d1d5db;
   --font-main: Arial, Helvetica, sans-serif;
-  --space-s : 8px;
-  --space-m : 16px;
-  --space-l : 32px;
-  --radius : 8px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 32px;
+  --radius: 8px;
+  --color-visted: #7c3aed;
   font-size: 16px;
 }
+
+/* ---------- Base: whole elements ---------- */
 body {
-    margin: 0;
-    font-family: var(--font-main);
-    color: var(--color-text);
-    background-color: var(--color-background);
-    line-height: 1.5;
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
 }
-h1 {
-            color: var(--color-primary);
-            font-family : sans-serif;
-        }
-.brand, .nav-link, .button{
-    font-weight: bold;
-    text-decoration: none;
+
+a {
+  color: var(--color-primary);
 }
-.hero {
-    text-align: center;
-    padding : var(--space-l) var(--space-m);
-    background-color: var(--color-surface);
+
+.brand, .nav-link, .button {
+  font-weight: bold;
+  text-decoration: none;
 }
-.hero-title{
-    font-size: 2.5rem;
-}
-.hero-text{
-    font-size: 1.25rem;
-    color: var(--color-muted);
-}
-#price {
-    font-size: 0.9rem;
-}
-.section-title {
-    font-size : 1.75rem;
-    letter-spacing: 1px;
-}
-.demo-caption {
-    font-style: italic;
-    color: var(--color-muted);
-}
-footer {
-    text-align: center;
-    color: var(--color-muted);
-    padding : var(--space-l) var(--space-m);
-    border-top : 1px solid var(--color-border);
-}
+
+/* ---------- Navbar ---------- */
 .navbar {
-    padding : var(--space-m);
-    border-bottom : 1px solid var(--color-border);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-m);
+  border-bottom: 1px solid var(--color-border);
 }
-.brand{
-    display: flex;
-    align-items: center;
+
+.brand {
+  display: flex;
+  align-items: center;
 }
+.footer a:link{
+    color : var(--color-primary);
+}
+.footer a:visited{
+    color : var(--color-visted);
+}
+.footer a:hover{
+    color : var(--color-primary-dark);
+}
+.footer a:active{
+    color : var(--color-text);
+}
+
 .brand-logo {
-    margin-right : var(--space-s);
+  margin-right: var(--space-s);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.chat-row--user .chat-avatar{
+    color : var(--color-primary);
+}
+.chat-tips li{
+    margin-bottom: var(--space-s);
+}
+.navbar > .brand{
+    color: var(--color-text);
+}
+.form-label + .form-field{
+    margin-top: var(--space-s);
+}
+.form-field ~ .button{
+    margin: var(--space-m) 0;
 }
 .nav-link {
-    padding : var(--space-s) var(--space-m);
+  padding: var(--space-s) var(--space-m);
 }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: var(--space-l) var(--space-m);
+  background-color: var(--color-surface);
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+}
+
+#price {
+  font-size: 0.9em;
+}
+
 /* ---------- Buttons ---------- */
 .button {
+  display: inline-block;
   margin: var(--space-s);
   padding: var(--space-s) var(--space-m);
   border: 2px solid var(--color-primary);
@@ -84,11 +120,34 @@ footer {
   color: var(--color-on-primary);
   font-family: var(--font-main);
   font-size: 1rem;
-  display: inline-block;
 }
+
+.button--secondary {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+}
+
+.button:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-on-primary);
+}
+
+/* ---------- Sections and feature cards ---------- */
 .section {
-    padding : var(--space-l) var(--space-m);
+  padding: var(--space-l) var(--space-m);
 }
+
+.section-title {
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .feature-card {
   width: 250px;
   margin: var(--space-s);
@@ -96,45 +155,66 @@ footer {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background-color: var(--color-surface);
-  display: inline-block;
-}
-.demo-figure{
-    margin : 0;
 }
 
-.planner-table{
-    width: 100%;
+.feature-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
 }
+
+/* ---------- Video and audio ---------- */
+.demo-figure {
+  margin: 0;
+}
+
+.demo-caption {
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: var(--space-l) var(--space-m);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* ---------- Forms ---------- */
+.form-label {
+  display: block;
+  margin-top: var(--space-m);
+  font-weight: bold;
+}
+
+.form-field {
+  display: block;
+  padding: var(--space-s);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+
+/* ---------- Planner table ---------- */
+.planner-table {
+  width: 100%;
+}
+
 th, td {
-    padding: var(--space-s);
-    text-align: left;
-    border-bottom: 1px solid var(--color-border);
+  padding: var(--space-s);
+  text-align: left;
 }
+
 th {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
+
 td {
-    background-color: var(--color-surface);
+  background-color: var(--color-surface);
 }
-.form-label{
-    display: block;
-    margin-bottom: var(--space-s);
-    font-weight: bold;
-}
-.form-field{
-    display: block;
-    padding: var(--space-s);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    font-family: var(--font-main);
-    font-size: 1rem;
-}
-.feature-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 /* ---------- Chat page ---------- */
 .chat-page {
   display: flex;
@@ -147,6 +227,7 @@ td {
   align-items: flex-end;
   margin-bottom: var(--space-m);
 }
+
 .chat-row--user {
   justify-content: flex-end;
 }
@@ -154,6 +235,7 @@ td {
 .chat-row--ai {
   justify-content: flex-start;
 }
+
 .chat-bubble {
   padding: var(--space-s) var(--space-m);
   border-radius: var(--radius);
@@ -169,38 +251,52 @@ td {
   margin-right: var(--space-l);
   background-color: var(--color-surface);
 }
-.feature-icon {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-bottom: var(--space-s);
+
+.chat-avatar {
+  margin: 0 var(--space-s);
+  font-size: 1.5rem;
+  color: var(--color-muted);
 }
-.button:hover {
-    background-color: var(--color-primary-dark);
-    color: var(--color-primary);
+
+.chat-tips {
+  margin-top: var(--space-l);
+  padding: var(--space-m);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
 }
-#features:visited {
-    color: var(--color-primary);
-}
+
+/* ---------- Wider screens: tablets and up ---------- */
 @media screen and (min-width: 768px) {
-    .navbar {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .nav-link {
-        padding: var(--space-s) var(--space-l);
-    }
-    .chat-page{
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    .chat{
-        width: 75%
-    }
-    .chat-tips{
-        width: 30%;
-        margin-left: var(--space-l);
-        margin-top: 0;
-    }
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .chat-page {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .chat {
+    width: 70%;
+  }
+
+  .chat-tips {
+    width: 30%;
+    margin-top: 0;
+    margin-left: var(--space-l);
+  }
+
+  .intro-video {
+    width: 560px;
+    height: 315px;
+  }
+}
+.nav-link:hover {
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
 }
 
-
+.nav-link:visited {
+  color: var(--color-primary-dark);
+}
