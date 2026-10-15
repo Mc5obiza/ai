@@ -169,5 +169,38 @@ td {
   margin-right: var(--space-l);
   background-color: var(--color-surface);
 }
+.feature-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-s);
+}
+.button:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-primary);
+}
+#features:visited {
+    color: var(--color-primary);
+}
+@media screen and (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-link {
+        padding: var(--space-s) var(--space-l);
+    }
+    .chat-page{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .chat{
+        width: 75%
+    }
+    .chat-tips{
+        width: 30%;
+        margin-left: var(--space-l);
+        margin-top: 0;
+    }
+}
 
 
