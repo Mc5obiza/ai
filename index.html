@@ -3,112 +3,159 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Student Assistant</title>
-    <link rel="icon" href="starter-assets\images\logo.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#f7f8f4">
+    <meta name="description" content="A calmer way to study: get clear explanations and make a study plan that works for you.">
+    <title>AI Student Assistant | Study with more focus</title>
+    <link rel="icon" href="starter-assets/images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!-- Header: logo and navigation links -->
-    <header class="navbar" id="top">
-      <a class="brand" href="index.html" title="Go to the home page">
-        <img class="brand-logo" src="starter-assets\images\logo.svg" alt="AI Student Assistant logo" width="40" height="40">
-        AI Student Assistant
-      </a>
-      <nav class="nav-links">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="assistant.html">Assistant</a>
-        <a class="nav-link" href="planner.html">Planner</a>
-      </nav>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="index.html" title="Go to the home page">
+          <img class="brand-logo" src="starter-assets/images/logo.svg" alt="" width="40" height="40">
+          <span>Study<span class="brand-accent">mate</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="nav-link is-active" href="index.html" aria-current="page">Home</a>
+          <a class="nav-link" href="assistant.html">Assistant</a>
+          <a class="nav-link" href="planner.html">Planner</a>
+        </nav>
+        <a class="header-cta" href="assistant.html">Ask a question <span aria-hidden="true">↗</span></a>
+      </div>
     </header>
 
-    <!-- Main content of the page -->
     <main>
-      <!-- Hero: the first thing visitors see -->
-      <section class="hero">
-        <h1 class="hero-title">Study smarter with AI</h1>
-        <p class="hero-text">Ask questions. Get clear answers.<br>Plan your week in minutes.</p>
-        <p id="price">Price: <del>$20 per month</del> <b>free</b> for <i>bootcamp students</i></p>
-        <div class="hero-actions">
-          <a class="button" href="assistant.html"><i class="fa fa-comments"></i> Ask a question</a>
-          <a class="button button--secondary" href="#features">See features</a>
+      <section class="hero hero--home">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Your study space, made simpler</p>
+            <h1>Make room for<br><span class="text-accent">that “aha!” moment.</span></h1>
+            <p class="hero-text">Big topics feel lighter when they’re explained clearly. Get unstuck, make a plan, and keep your own pace.</p>
+            <div class="hero-actions">
+              <a class="button" href="assistant.html"><i class="fa fa-comment-o" aria-hidden="true"></i> Ask your first question</a>
+              <a class="text-link" href="planner.html">See your study planner <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="hero-note"><i class="fa fa-leaf" aria-hidden="true"></i> A little progress still counts.</p>
+          </div>
+          <div class="hero-art" aria-label="Study dashboard preview">
+            <div class="preview-card preview-card--main">
+              <div class="preview-topline">
+                <span class="preview-label">A gentle nudge</span>
+                <span class="preview-spark" aria-hidden="true">✳</span>
+              </div>
+              <p class="preview-question">What are you working on today?</p>
+              <div class="preview-answer">
+                <span class="preview-avatar" aria-hidden="true"><i class="fa fa-graduation-cap"></i></span>
+                <p>Start with one small thing. You can build from there.</p>
+              </div>
+              <div class="preview-input">Ask anything about your studies <span aria-hidden="true">↗</span></div>
+            </div>
+            <div class="preview-card preview-card--plan">
+              <span class="plan-icon" aria-hidden="true"><i class="fa fa-calendar-check-o"></i></span>
+              <div><strong>One step at a time</strong><small>Your week, at your pace</small></div>
+              <span class="plan-check" aria-hidden="true"><i class="fa fa-check"></i></span>
+            </div>
+            <span class="hero-orbit hero-orbit--one" aria-hidden="true"></span>
+            <span class="hero-orbit hero-orbit--two" aria-hidden="true"></span>
+          </div>
         </div>
       </section>
 
-      <!-- Features: what the assistant can do -->
-      <section class="section" id="features">
-        <h2 class="section-title">What it can do</h2>
+      <section class="section section--features" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">A more helpful study routine</p>
+          <h2 class="section-title">Find your next step.</h2>
+          <p class="section-intro">No pressure to know it all. Just tools to help you keep moving.</p>
+        </div>
         <div class="feature-list">
-          <article class="feature-card">
-            <i class="fa fa-lightbulb-o feature-icon"></i>
-            <h3 class="feature-title">Explain any topic</h3>
-            <p>Get simple explanations of hard lessons, step by step.</p>
+          <article class="feature-card feature-card--main">
+            <span class="feature-icon feature-icon--green"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
+            <p class="card-kicker">Understand</p>
+            <h3 class="feature-title">Make tricky topics click</h3>
+            <p>Get a clear, step-by-step explanation and ask follow-up questions when you need to.</p>
+            <a class="card-link" href="assistant.html">Talk it through <span aria-hidden="true">→</span></a>
           </article>
           <article class="feature-card">
-            <i class="fa fa-calendar feature-icon"></i>
-            <h3 class="feature-title">Plan your week</h3>
-            <p>Organize your study sessions in a clear weekly table.</p>
+            <span class="feature-icon feature-icon--peach"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            <p class="card-kicker">Organize</p>
+            <h3 class="feature-title">Make a plan that fits</h3>
+            <p>Turn a busy week into small, doable study sessions.</p>
+            <a class="card-link" href="planner.html">Plan your week <span aria-hidden="true">→</span></a>
           </article>
           <article class="feature-card">
-            <i class="fa fa-check-square-o feature-icon"></i>
-            <h3 class="feature-title">Practice for exams</h3>
-            <p>Ask for quiz questions and check your answers.</p>
+            <span class="feature-icon feature-icon--lavender"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+            <p class="card-kicker">Practice</p>
+            <h3 class="feature-title">Build confidence as you go</h3>
+            <p>Try examples and quiz questions to check what’s sticking.</p>
+            <a class="card-link" href="assistant.html">Start practicing <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </section>
 
-      <!-- How it works: three simple steps -->
-      <section class="section" id="how-it-works">
-        <h2 class="section-title">How it works</h2>
-        <ol class="steps">
-          <li>Choose a subject.</li>
-          <li>Type your question and press Send.</li>
-          <li>Read the answer and ask a follow-up question.</li>
-        </ol>
+      <section class="how-section" id="how-it-works">
+        <div class="how-inner">
+          <div class="how-intro">
+            <p class="eyebrow">Getting started</p>
+            <h2 class="section-title">You bring the question.<br>We’ll take it from there.</h2>
+            <p class="section-intro">A simple rhythm for learning something new—without the overwhelm.</p>
+          </div>
+          <ol class="steps">
+            <li><span class="step-number">01</span><div><h3>Pick a subject</h3><p>Choose what you’re learning right now.</p></div></li>
+            <li><span class="step-number">02</span><div><h3>Ask in your own words</h3><p>Tell us where you got stuck or what you’re curious about.</p></div></li>
+            <li><span class="step-number">03</span><div><h3>Keep the momentum</h3><p>Explore an example, ask a follow-up, or plan your next session.</p></div></li>
+          </ol>
+        </div>
       </section>
 
-      <!-- Glossary: AI words explained -->
-      <section class="section" id="glossary">
-        <h2 class="section-title">AI words to know</h2>
-        <dl class="glossary">
-          <dt>Model</dt>
-          <dd>A program that learned patterns from a lot of data.</dd>
-          <dt>Prompt</dt>
-          <dd>The question or instruction you give to the AI.</dd>
-          <dt>Token</dt>
-          <dd>A small piece of text the AI reads, like a short word.</dd>
-        </dl>
-      </section>
-
-      <!-- Demo: video and audio files -->
-      <section class="section" id="demo">
-        <h2 class="section-title">See and hear it</h2>
-        <figure class="demo-figure">
-          <video class="demo-video" width="320" height="180" controls>
-            <source src="media/demo.mp4" type="video/mp4">
-            Your browser cannot play this video.
-          </video>
-          <figcaption class="demo-caption">A sample clip. Later, replace it with a recording of your app.</figcaption>
-        </figure>
-        <p>The sound you hear when an answer is ready:</p>
-        <audio controls>
-          <source src="media/chime.wav" type="audio/wav">
-          Your browser cannot play this audio.
-        </audio>
-      </section>
-
-      <!-- Intro video embedded from YouTube -->
-      <section class="section" id="intro">
-        <h2 class="section-title">Watch: what is a neural network?</h2>
-        <iframe class="intro-video" width="320" height="180" src="https://www.youtube.com/embed/aircAruvnKk" title="But what is a neural network?" allowfullscreen></iframe>
+      <section class="section resource-section" id="resources">
+        <div class="section-heading section-heading--left">
+          <p class="eyebrow">Keep exploring</p>
+          <h2 class="section-title">A few helpful extras.</h2>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <span class="resource-icon" aria-hidden="true"><i class="fa fa-book"></i></span>
+            <h3>AI words, in plain English</h3>
+            <dl class="glossary">
+              <dt>Model</dt><dd>A program that learns patterns from examples.</dd>
+              <dt>Prompt</dt><dd>The question or instruction you give to an AI.</dd>
+              <dt>Token</dt><dd>A small piece of text, like a short word.</dd>
+            </dl>
+          </article>
+          <article class="resource-card resource-card--media">
+            <span class="resource-icon" aria-hidden="true"><i class="fa fa-play-circle-o"></i></span>
+            <h3>See and hear it</h3>
+            <p class="resource-description">A sample clip and the sound that plays when an answer is ready.</p>
+            <video class="demo-video" controls preload="metadata" aria-label="Student assistant sample video">
+              <source src="starter-assets/media/demo.mp4" type="video/mp4">
+              Your browser cannot play this video.
+            </video>
+            <audio controls preload="metadata" aria-label="Answer ready sound">
+              <source src="starter-assets/media/chime.wav" type="audio/wav">
+              Your browser cannot play this audio.
+            </audio>
+            <p class="media-caption">A sample clip. Replace it with a recording of your app.</p>
+          </article>
+          <article class="resource-card resource-card--wide">
+            <div>
+              <span class="resource-icon" aria-hidden="true"><i class="fa fa-sitemap"></i></span>
+              <h3>Curious about neural networks?</h3>
+              <p class="resource-description">Watch a friendly visual introduction to how they learn.</p>
+            </div>
+            <iframe class="intro-video" src="https://www.youtube-nocookie.com/embed/aircAruvnKk" title="But what is a neural network? A visual introduction" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </article>
+        </div>
       </section>
     </main>
 
-    <!-- Footer: information about the site -->
-    <footer class="footer">
-      <p>Made by the AI Development Bootcamp students.<br>Built with HTML and CSS.</p>
-      <p><a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Learn more about AI</a> | <a href="#top">Back to top</a></p>
-      <p><small>For learning purposes only.</small></p>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand brand--footer" href="index.html"><img class="brand-logo" src="starter-assets/images/logo.svg" alt="" width="32" height="32"><span>Study<span class="brand-accent">mate</span></span></a>
+        <p>Made by AI Development Bootcamp students. <span>Built for learning, one step at a time.</span></p>
+        <a class="footer-top" href="#top">Back to top ↑</a>
+      </div>
     </footer>
   </body>
 </html>

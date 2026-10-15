@@ -3,83 +3,117 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistant | AI Student Assistant</title>
-    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#f7f8f4">
+    <title>Study Assistant | Studymate</title>
+    <link rel="icon" href="starter-assets/images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <!-- Header: logo and navigation links -->
-    <header class="navbar" id="top">
-      <a class="brand" href="index.html" title="Go to the home page">
-        <img class="brand-logo" src="images/logo.svg" alt="AI Student Assistant logo" width="40" height="40">
-        AI Student Assistant
-      </a>
-      <nav class="nav-links">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="assistant.html">Assistant</a>
-        <a class="nav-link" href="planner.html">Planner</a>
-      </nav>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="index.html" title="Go to the home page">
+          <img class="brand-logo" src="starter-assets/images/logo.svg" alt="" width="40" height="40">
+          <span>Study<span class="brand-accent">mate</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link is-active" href="assistant.html" aria-current="page">Assistant</a>
+          <a class="nav-link" href="planner.html">Planner</a>
+        </nav>
+        <a class="header-cta" href="planner.html">Plan your week <span aria-hidden="true">↗</span></a>
+      </div>
     </header>
 
-    <!-- Main content: the chat and a sidebar with tips -->
-    <main class="chat-page">
-      <section class="chat">
-        <h1 class="page-title">Ask the assistant</h1>
-        <!-- Example conversation (static for now) -->
-        <div class="chat-history">
-          <div class="chat-row chat-row--user">
-            <div class="chat-bubble chat-bubble--user">What is machine learning?</div>
-            <i class="fa fa-user chat-avatar"></i>
-          </div>
-          <div class="chat-row chat-row--ai">
-            <i class="fa fa-graduation-cap chat-avatar"></i>
-            <div class="chat-bubble chat-bubble--ai">It is a way to teach computers with examples instead of writing every rule by hand.</div>
-          </div>
-          <div class="chat-row chat-row--user">
-            <div class="chat-bubble chat-bubble--user">Can you give me an example?</div>
-            <i class="fa fa-user chat-avatar"></i>
-          </div>
-          <div class="chat-row chat-row--ai">
-            <i class="fa fa-graduation-cap chat-avatar"></i>
-            <div class="chat-bubble chat-bubble--ai">Sure! A spam filter learns from thousands of emails which ones are spam.</div>
-          </div>
+    <main class="app-main">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">Your learning companion</p>
+          <h1 class="page-title">Let’s figure it out.</h1>
+          <p class="page-subtitle">No question is too small. Start wherever you are.</p>
         </div>
-        <!-- Question form -->
-        <form class="chat-form">
-          <label class="form-label" for="subject">Subject</label>
-          <select class="form-field" id="subject" name="subject">
-            <option value="math">Math</option>
-            <option value="physics">Physics</option>
-            <option value="coding">Coding</option>
-            <option value="english">English</option>
-          </select>
-          <label class="form-label" for="question">Your question</label>
-          <textarea class="form-field" id="question" name="question" rows="4" cols="30" placeholder="Type your question here..."></textarea>
-          <div class="form-actions">
-            <button class="button" type="submit"><i class="fa fa-paper-plane"></i> Send</button>
-            <button class="button button--secondary" type="reset">Clear</button>
-            <button class="button button--secondary" type="button">New chat</button>
-          </div>
-        </form>
-      </section>
+        <span class="demo-status"><span class="status-dot"></span> Learning demo</span>
+      </div>
 
-      <!-- Sidebar: tips for good questions -->
-      <aside class="chat-tips">
-        <h2 class="tips-title">Tips for good questions</h2>
-        <ul class="tips-list">
-          <li>Name the topic and your level.</li>
-          <li>Ask for an example.</li>
-          <li>Ask it to explain "like I am 12 years old".</li>
-        </ul>
-      </aside>
+      <div class="chat-layout">
+        <section class="chat-panel" aria-labelledby="chat-heading">
+          <div class="chat-panel-header">
+            <div class="assistant-identity">
+              <span class="assistant-avatar" aria-hidden="true"><i class="fa fa-graduation-cap"></i></span>
+              <div><h2 id="chat-heading">Study assistant</h2><p>Here to help you learn at your pace</p></div>
+            </div>
+            <span class="privacy-note"><i class="fa fa-lock" aria-hidden="true"></i> Private to this page</span>
+          </div>
+
+          <div class="chat-history" id="chat-history" aria-live="polite" aria-relevant="additions text">
+            <div class="chat-row chat-row--user">
+              <div class="chat-message"><span class="message-author">You</span><div class="chat-bubble chat-bubble--user">What is machine learning?</div></div>
+              <span class="chat-avatar chat-avatar--user" aria-hidden="true"><i class="fa fa-user"></i></span>
+            </div>
+            <div class="chat-row chat-row--ai">
+              <span class="chat-avatar chat-avatar--ai" aria-hidden="true"><i class="fa fa-graduation-cap"></i></span>
+              <div class="chat-message"><span class="message-author">Study assistant</span><div class="chat-bubble chat-bubble--ai">It is a way to teach computers with examples instead of writing every rule by hand.</div></div>
+            </div>
+            <div class="chat-row chat-row--user">
+              <div class="chat-message"><span class="message-author">You</span><div class="chat-bubble chat-bubble--user">Can you give me an example?</div></div>
+              <span class="chat-avatar chat-avatar--user" aria-hidden="true"><i class="fa fa-user"></i></span>
+            </div>
+            <div class="chat-row chat-row--ai">
+              <span class="chat-avatar chat-avatar--ai" aria-hidden="true"><i class="fa fa-graduation-cap"></i></span>
+              <div class="chat-message"><span class="message-author">Study assistant</span><div class="chat-bubble chat-bubble--ai">Sure! A spam filter learns from thousands of emails which ones are spam.</div></div>
+            </div>
+          </div>
+
+          <div class="prompt-starters" aria-label="Try asking">
+            <span>Try asking</span>
+            <button class="prompt-chip" type="button" data-prompt="Explain this step by step">Step by step</button>
+            <button class="prompt-chip" type="button" data-prompt="Can you give me a real-world example?">Give me an example</button>
+            <button class="prompt-chip" type="button" data-prompt="Quiz me on this topic">Quiz me</button>
+          </div>
+
+          <form class="chat-form" id="chat-form">
+            <label class="form-label" for="subject">I’m studying</label>
+            <select class="form-field" id="subject" name="subject">
+              <option value="Math">Math</option>
+              <option value="Physics">Physics</option>
+              <option value="Coding">Coding</option>
+              <option value="English">English</option>
+            </select>
+            <label class="form-label" for="question">What would you like help with?</label>
+            <div class="question-input-wrap">
+              <textarea class="form-field question-input" id="question" name="question" rows="3" maxlength="1000" placeholder="Type your question in your own words..." required></textarea>
+              <button class="send-button" type="submit" aria-label="Send question"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+            </div>
+            <div class="chat-form-bottom">
+              <p class="form-hint">This is a learning demo. Your question stays in this page.</p>
+              <button class="button button--quiet" id="new-chat" type="button"><i class="fa fa-plus" aria-hidden="true"></i> New chat</button>
+            </div>
+            <p class="form-feedback" id="chat-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <aside class="tips-card">
+          <span class="tips-icon" aria-hidden="true"><i class="fa fa-compass"></i></span>
+          <p class="card-kicker">A little guidance</p>
+          <h2 class="tips-title">Get more helpful answers</h2>
+          <p class="tips-intro">A few details can make a big difference.</p>
+          <ul class="tips-list">
+            <li><span class="tip-check"><i class="fa fa-check" aria-hidden="true"></i></span><span><strong>Name the topic</strong><br>Tell us what lesson or idea you mean.</span></li>
+            <li><span class="tip-check"><i class="fa fa-check" aria-hidden="true"></i></span><span><strong>Share your level</strong><br>Let us know what you already understand.</span></li>
+            <li><span class="tip-check"><i class="fa fa-check" aria-hidden="true"></i></span><span><strong>Ask for an example</strong><br>Connect a new idea to something familiar.</span></li>
+          </ul>
+          <div class="gentle-note"><i class="fa fa-heart-o" aria-hidden="true"></i><p>Learning isn’t a race. Take it one question at a time.</p></div>
+        </aside>
+      </div>
     </main>
 
-    <!-- Footer: information about the site -->
-    <footer class="footer">
-      <p>Made by the AI Development Bootcamp students.<br>Built with HTML and CSS.</p>
-      <p><a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Learn more about AI</a> | <a href="#top">Back to top</a></p>
-      <p><small>For learning purposes only.</small></p>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand brand--footer" href="index.html"><img class="brand-logo" src="starter-assets/images/logo.svg" alt="" width="32" height="32"><span>Study<span class="brand-accent">mate</span></span></a>
+        <p>Made by AI Development Bootcamp students. <span>Built for learning, one step at a time.</span></p>
+        <a class="footer-top" href="#top">Back to top ↑</a>
+      </div>
     </footer>
   </body>
 </html>

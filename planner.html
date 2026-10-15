@@ -3,77 +3,104 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planner | AI Student Assistant</title>
-    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#f7f8f4">
+    <title>Study Planner | Studymate</title>
+    <link rel="icon" href="starter-assets/images/logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <!-- Header: logo and navigation links -->
-    <header class="navbar" id="top">
-      <a class="brand" href="index.html" title="Go to the home page">
-        <img class="brand-logo" src="images/logo.svg" alt="AI Student Assistant logo" width="40" height="40">
-        AI Student Assistant
-      </a>
-      <nav class="nav-links">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="assistant.html">Assistant</a>
-        <a class="nav-link" href="planner.html">Planner</a>
-      </nav>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="index.html" title="Go to the home page">
+          <img class="brand-logo" src="starter-assets/images/logo.svg" alt="" width="40" height="40">
+          <span>Study<span class="brand-accent">mate</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="assistant.html">Assistant</a>
+          <a class="nav-link is-active" href="planner.html" aria-current="page">Planner</a>
+        </nav>
+        <a class="header-cta" href="assistant.html">Ask a question <span aria-hidden="true">↗</span></a>
+      </div>
     </header>
 
-    <!-- Main content of the page -->
-    <main>
-      <section class="section">
-        <h1 class="page-title">My weekly study plan</h1>
-        <table class="planner-table">
-          <tr>
-            <th>Day</th>
-            <th>Subject</th>
-            <th>Time</th>
-            <th>Goal</th>
-          </tr>
-          <tr>
-            <td>Monday</td>
-            <td>Math</td>
-            <td>18:00</td>
-            <td>Practice fractions</td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td>Coding</td>
-            <td>17:00</td>
-            <td>Build a web page</td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td>English</td>
-            <td>10:00</td>
-            <td>Read one article</td>
-          </tr>
-        </table>
+    <main class="app-main planner-main">
+      <div class="page-heading page-heading--planner">
+        <div>
+          <p class="eyebrow">A plan that bends with you</p>
+          <h1 class="page-title">Your week, your way.</h1>
+          <p class="page-subtitle">Small, focused sessions add up. Make a plan that feels doable.</p>
+        </div>
+        <a class="button" href="#add-session"><i class="fa fa-plus" aria-hidden="true"></i> Add a session</a>
+      </div>
+
+      <section class="planner-overview" aria-label="Study plan overview">
+        <div class="overview-copy">
+          <span class="overview-icon" aria-hidden="true"><i class="fa fa-sun-o"></i></span>
+          <div><p class="card-kicker">Your study rhythm</p><h2>A little progress is still progress.</h2><p>Keep your sessions realistic, and leave yourself room to rest.</p></div>
+        </div>
+        <div class="overview-stats">
+          <div class="overview-stat"><strong id="session-count">3</strong><span>planned sessions</span></div>
+          <div class="overview-stat"><strong id="study-hours">3 hrs</strong><span>on your calendar</span></div>
+        </div>
       </section>
 
-      <!-- Form to add a study session (it will work with JavaScript later) -->
-      <section class="section">
-        <h2 class="section-title">Add a study session</h2>
-        <form class="planner-form">
-          <label class="form-label" for="session-subject">Subject</label>
-          <input class="form-field" type="text" id="session-subject" name="subject" placeholder="Example: Math" maxlength="30">
-          <label class="form-label" for="session-date">Date</label>
-          <input class="form-field" type="date" id="session-date" name="date">
-          <label class="form-label" for="session-hours">Hours</label>
-          <input class="form-field" type="number" id="session-hours" name="hours" value="1">
-          <input class="button" type="submit" value="Add session">
-        </form>
-      </section>
+      <div class="planner-grid">
+        <section class="schedule-card" aria-labelledby="schedule-heading">
+          <div class="card-heading">
+            <div><p class="card-kicker">Your calendar</p><h2 id="schedule-heading">Study sessions</h2></div>
+            <span class="local-note"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Saved on this device</span>
+          </div>
+          <div class="table-scroll">
+            <table class="planner-table">
+              <thead><tr><th scope="col">Day</th><th scope="col">Subject &amp; goal</th><th scope="col">Time</th><th scope="col">Length</th><th scope="col"><span class="visually-hidden">Actions</span></th></tr></thead>
+              <tbody id="session-list">
+                <tr data-session-row><td class="session-day"><strong>Monday</strong><span>May 18</span></td><td><strong class="session-subject">Math</strong><span class="session-goal">Practice fractions</span></td><td>18:00</td><td>1 hr</td><td></td></tr>
+                <tr data-session-row><td class="session-day"><strong>Wednesday</strong><span>May 20</span></td><td><strong class="session-subject">Coding</strong><span class="session-goal">Build a web page</span></td><td>17:00</td><td>1 hr</td><td></td></tr>
+                <tr data-session-row><td class="session-day"><strong>Saturday</strong><span>May 23</span></td><td><strong class="session-subject">English</strong><span class="session-goal">Read one article</span></td><td>10:00</td><td>1 hr</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="empty-sessions" id="empty-sessions" hidden>Your week is wide open. Add a session when you’re ready.</p>
+          <p class="form-feedback" id="planner-feedback" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="add-session-card" id="add-session" aria-labelledby="add-session-heading">
+          <div class="card-heading">
+            <div><p class="card-kicker">Make it happen</p><h2 id="add-session-heading">Add a session</h2></div>
+            <span class="form-card-icon" aria-hidden="true"><i class="fa fa-pencil"></i></span>
+          </div>
+          <p class="form-intro">Keep it simple. You can always adjust your plan later.</p>
+          <form class="planner-form" id="planner-form">
+            <label class="form-label" for="session-subject">Subject</label>
+            <input class="form-field" type="text" id="session-subject" name="subject" placeholder="e.g. Biology" maxlength="30" required>
+            <label class="form-label" for="session-goal">What would you like to do?</label>
+            <input class="form-field" type="text" id="session-goal" name="goal" placeholder="e.g. Review chapter 2" maxlength="80" required>
+            <div class="form-row">
+              <div><label class="form-label" for="session-date">Date</label><input class="form-field" type="date" id="session-date" name="date" required></div>
+              <div><label class="form-label" for="session-time">Start time</label><input class="form-field" type="time" id="session-time" name="time" value="17:00" required></div>
+            </div>
+            <label class="form-label" for="session-hours">Length</label>
+            <select class="form-field" id="session-hours" name="hours">
+              <option value="0.5">30 minutes</option>
+              <option value="1" selected>1 hour</option>
+              <option value="1.5">1.5 hours</option>
+              <option value="2">2 hours</option>
+            </select>
+            <button class="button planner-submit" type="submit"><i class="fa fa-plus" aria-hidden="true"></i> Add to my week</button>
+          </form>
+        </section>
+      </div>
     </main>
 
-    <!-- Footer: information about the site -->
-    <footer class="footer">
-      <p>Made by the AI Development Bootcamp students.<br>Built with HTML and CSS.</p>
-      <p><a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Learn more about AI</a> | <a href="#top">Back to top</a></p>
-      <p><small>For learning purposes only.</small></p>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand brand--footer" href="index.html"><img class="brand-logo" src="starter-assets/images/logo.svg" alt="" width="32" height="32"><span>Study<span class="brand-accent">mate</span></span></a>
+        <p>Made by AI Development Bootcamp students. <span>Built for learning, one step at a time.</span></p>
+        <a class="footer-top" href="#top">Back to top ↑</a>
+      </div>
     </footer>
   </body>
 </html>
