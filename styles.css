@@ -292,11 +292,4 @@ td {
     height: 315px;
   }
 }
-.nav-link:hover {
-  border-radius: var(--radius);
-  background-color: var(--color-surface);
-}
 
-.nav-link:visited {
-  color: var(--color-primary-dark);
-}
